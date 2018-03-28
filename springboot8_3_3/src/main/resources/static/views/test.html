@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript">
+        /** REST服务实现了对WEB资源的精确定位 */
+      function queryAll() {
+            /*查询全部*/
+            $.ajax({
+                url: "http://localhost:8079/persons",
+                type: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    console.log(data._embedded);
+                }
+            });
+        }
+        function queryById() {
+            /*根据主键查询数据*/
+            $.ajax({
+                url: "http://localhost:8079/persons/45",
+                type: 'GET',
+                dataType: 'json',
+                success: function (data,a,b) {
+                    console.log(data);
+                }
+            });
+        }
+        function customQuery() {
+            /*自定义查询*/
+            $.ajax({
+                url: "http://localhost:8079/persons/search/nameStartsWith?name=MC",
+                type: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    console.log(data);
+                }
+            });
+        }
+
+        function mySort() {
+            /*排序*/
+            $.ajax({
+                url: "http://localhost:8079/persons?sort=age,desc",
+                type: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    console.log(data);
+                }
+            });
+        }
+        function myPage() {
+            /*分页*/
+            $.ajax({
+                url: "http://localhost:8079/persons?page=1&size=2",
+                type: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    console.log(data);
+                }
+            });
+        }
+       function mySave() {
+           /*保存数据*/
+           $.ajax({
+               url: "http://localhost:8079/persons",
+               type: 'POST',
+               dataType: 'json',
+               contentType: 'application/json',
+               data:JSON.stringify({
+                   id:50,
+                   name: 'MC复仔',
+                   age: 15,
+                   address: '河北庙庙王'
+               }),
+               success: function (data) {
+                   console.log(data);
+               }
+           });
+       }
+        function myUpdate() {
+            /*更新数据*/
+            $.ajax({
+                url: "http://localhost:8079/persons/45",
+                type: 'PUT',
+                dataType: 'json',
+                contentType: 'application/json',
+                data:JSON.stringify({
+                    id:50,
+                    name: 'MC复仔',
+                    age: 15,
+                    address: '河北庙庙王'
+                }),
+                success: function (data) {
+                    console.log(data);
+                }
+            });
+        }
+        function myDelete() {
+            /*删除数据*/
+            $.ajax({
+                url: "http://localhost:8079/persons/45",
+                type: 'delete',
+                dataType: 'json',
+                success:function (data) {
+                    console.log(data);
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <button onclick="queryAll()">查询所有</button></br>
+    <button onclick="queryById()">根据主键查询</button></br>
+    <button onclick="customQuery()">自定义查询</button></br>
+    <button onclick="myPage()">分页</button></br>
+    <button onclick="mySort()">排序</button></br>
+    <button onclick="mySave()">保存数据</button></br>
+    <button onclick="myUpdate()">更新数据</button></br>
+    <button onclick="myDelete()">删除数据</button></br>
+</body>
+</html>

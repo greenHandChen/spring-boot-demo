@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringBoot6_5/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot7_2_4/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot7_4_4/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot7_5_3/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot7_6_3_1/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot7_6_3_2/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot7_7_3/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot8_2_3/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot8_3_3/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot_6_2/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot8_6_2/pom.xml" />
+      </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/springBoot6.4/pom.xml" />
+        <option value="$PROJECT_DIR$/springbootstarterhello/pom.xml" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_3" default="false" project-jdk-name="Java8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

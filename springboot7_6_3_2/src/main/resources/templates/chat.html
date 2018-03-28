@@ -1,0 +1,43 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta content="text/html;charset=UTF-8"/>
+    <link th:href="@{bootstrap/css/bootstrap.css}" rel="stylesheet"/>
+    <link th:href="@{bootstrap/css/bootstrap-theme.css}" rel="stylesheet"/>
+    <script th:src="@{jquery/jquery-2.2.3.min.js}" type="text/javascript"></script>
+    <script th:src="@{bootstrap/js/bootstrap.js}" type="text/javascript"></script>
+    <!--sockjs的客户端脚本-->
+    <script src="https://cdn.bootcss.com/sockjs-client/1.1.4/sockjs.min.js" type="text/javascript"></script>
+    <!--stomp的客户端脚本-->
+    <script src="https://cdn.bootcss.com/stomp.js/2.3.3/stomp.min.js" type="text/javascript"></script>
+    <script th:inline="javascript">
+        function initSocket() {
+            $('#cehForm').submit(function (e) {
+                e.preventDefault();
+                var text = $('#cehArea').val();
+                stompClient.send('/chat', {}, text);
+            });
+            var socket = new SockJS('/endpointChat');// 指明终端
+            var stompClient = Stomp.over(socket);// 使用stomp协议的客户端
+            // 指明客户端订阅路径，必须以user开头
+            stompClient.connect('guest', 'guest', function (frame) {
+                stompClient.subscribe('/user/queue/notifications', handleNotifications);
+            });
+        }
+        function handleNotifications(message) {
+            console.log(message);
+            $('<p>'+message.body + '</p>').appendTo($('#output'));
+        }
+        $(function () {
+            initSocket();
+        });
+    </script>
+</head>
+<body>
+<p>聊天室</p>
+<form id="cehForm">
+    <textarea id="cehArea" rows="4" cols="60" name="text"></textarea>
+    <input type="submit"/>
+</form>
+<div id="output"></div>
+</body>
+</html>

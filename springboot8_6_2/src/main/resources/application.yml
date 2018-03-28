@@ -1,0 +1,29 @@
+# redis主要属性配置
+spring:
+# 数据库配置
+  redis:
+    database: 1 # 默认为0
+    host: localhost # 默认为localhost
+    password: #数据库密码
+    port: 6379 # 默认端口为6379
+    timeout: 6000 #超时配置
+#连接池配置
+    pool:
+      max-idle: 8
+      min-idle: 0
+      max-active: 8
+      max-wait: -1
+# 集群配置
+    sentinel:
+      master:
+      nodes:
+cux:
+  redis:
+    category: cache
+# 每个cache类用于将数据库数据加载进redis
+# cacheManager用于启动加载过程
+
+# 缓存管理的使用
+# 1.编写cacheBean
+# 2.在config中配置对应的cacheBean
+# 3.在config中将对应的cacheBean注入到缓存管理器中

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="demo" />
+        <module name="spring_boot_starter_hello" />
+        <module name="SpringBoot623" />
+        <module name="SpringBoot6_4" />
+        <module name="SpringBoot6_5" />
+        <module name="springboot7_2_4" />
+        <module name="springboot7_4_4" />
+        <module name="springboot7_5_3" />
+        <module name="springboot7_6_3_1" />
+        <module name="springboot7_6_3_2" />
+        <module name="springboot7_7_3" />
+        <module name="springboot8_2_3" />
+        <module name="springboot8_3_3" />
+        <module name="springboot8_6_2" />
+        <module name="springboot8_6_2 (1)" />
+        <module name="springboot_6_2" />
+        <module name="springBootDemo" />
+      </profile>
+      <profile name="Annotation profile for springBoot" enabled="true">
+        <sourceOutputDir name="../springBootDemo/target/generated-sources/annotations" />
+        <sourceTestOutputDir name="../springBootDemo/target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="SpringBoot6_X" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="demo" target="1.8" />
+      <module name="spring_boot_starter_hello" target="1.8" />
+      <module name="springBoot" target="1.8" />
+      <module name="springBoot6.4" target="1.8" />
+      <module name="SpringBoot623" target="1.8" />
+      <module name="SpringBoot6_4" target="1.8" />
+      <module name="SpringBoot6_5" target="1.5" />
+      <module name="SpringBoot6_X" target="1.8" />
+      <module name="springboot7_2_4" target="1.8" />
+      <module name="springboot7_4_4" target="1.8" />
+      <module name="springboot7_5_3" target="1.8" />
+      <module name="springboot7_6_3_1" target="1.8" />
+      <module name="springboot7_6_3_2" target="1.8" />
+      <module name="springboot7_7_3" target="1.8" />
+      <module name="springboot8_2_3" target="1.8" />
+      <module name="springboot8_3_3" target="1.8" />
+      <module name="springboot8_6" target="1.8" />
+      <module name="springboot8_6_2" target="1.8" />
+      <module name="springboot8_6_2 (1)" target="1.5" />
+      <module name="springboot_6_2" target="1.8" />
+      <module name="springBootDemo" target="1.8" />
+      <module name="springbootstarterhello" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
